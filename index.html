@@ -1,0 +1,2284 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Kasus Pencurian Hati</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Figtree:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,500..800;1,9..144,400..600&display=swap"
+    />
+    <style>
+      :root {
+        --bg: #ffeff4;
+        --paper: #fffbfd;
+        --ink: #4b2140;
+        --ink-soft: #7a4f6d;
+        --rose: #f2649b;
+        --rose-deep: #c92a6d;
+        --rose-pale: #ffd6e5;
+        --line: #f4b9d0;
+        --dot: #f9cddd;
+        --btn: #c92a6d;
+        --btn-ink: #ffffff;
+        --stamp: #d42a6c;
+        --before-bg: #dad3e6;
+        --before-ink: #3f2a4a;
+        --shadow: rgba(140, 30, 90, 0.2);
+        --sea: #ede2ff;
+        --land: #ffc9de;
+        color-scheme: light;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #22101e;
+          --paper: #331a2d;
+          --ink: #ffe8f1;
+          --ink-soft: #ddafc6;
+          --rose: #ff7fb2;
+          --rose-deep: #ff93bf;
+          --rose-pale: #4b2341;
+          --line: #63304f;
+          --dot: #321a2d;
+          --btn: #ff93bf;
+          --btn-ink: #3a0f28;
+          --stamp: #ff93bf;
+          --before-bg: #3b3247;
+          --before-ink: #ebddf5;
+          --shadow: rgba(0, 0, 0, 0.45);
+          --sea: #2b1a3a;
+          --land: #5c2b4e;
+          color-scheme: dark;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #22101e;
+        --paper: #331a2d;
+        --ink: #ffe8f1;
+        --ink-soft: #ddafc6;
+        --rose: #ff7fb2;
+        --rose-deep: #ff93bf;
+        --rose-pale: #4b2341;
+        --line: #63304f;
+        --dot: #321a2d;
+        --btn: #ff93bf;
+        --btn-ink: #3a0f28;
+        --stamp: #ff93bf;
+        --before-bg: #3b3247;
+        --before-ink: #ebddf5;
+        --shadow: rgba(0, 0, 0, 0.45);
+        --sea: #2b1a3a;
+        --land: #5c2b4e;
+        color-scheme: dark;
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+        background: var(--bg);
+        -webkit-text-size-adjust: 100%;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          "Figtree",
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        font-size: 1rem;
+        line-height: 1.55;
+        background-image: radial-gradient(var(--dot) 1.6px, transparent 1.8px);
+        background-size: 22px 22px;
+        overflow-x: hidden;
+      }
+      main {
+        max-width: 520px;
+        margin: 0 auto;
+        padding: 18px 18px 56px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", Georgia, "Times New Roman", serif;
+        line-height: 1.15;
+        margin: 0;
+      }
+      h1 {
+        font-size: clamp(2rem, 9vw, 2.9rem);
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+      h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin: 16px 0 6px;
+      }
+      p {
+        margin: 0;
+      }
+      section {
+        margin-top: 54px;
+      }
+      .lead {
+        color: var(--ink-soft);
+        margin-bottom: 6px;
+      }
+      :focus-visible {
+        outline: 3px solid var(--rose-deep);
+        outline-offset: 3px;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .btn {
+        background: var(--btn);
+        color: var(--btn-ink);
+        border: 0;
+        border-radius: 999px;
+        padding: 13px 26px;
+        font-weight: 700;
+        font-size: 1rem;
+        box-shadow:
+          0 4px 0 var(--rose-pale),
+          0 8px 18px var(--shadow);
+        transition: transform 0.12s ease;
+      }
+      .btn:active {
+        transform: translateY(2px);
+      }
+      .btn:disabled {
+        opacity: 0.6;
+        cursor: default;
+      }
+
+      /* language switch */
+      .top {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 8px;
+      }
+      .lang {
+        display: inline-flex;
+        background: var(--paper);
+        border: 2px solid var(--rose-deep);
+        border-radius: 999px;
+        padding: 3px;
+      }
+      .lang button {
+        border: 0;
+        background: transparent;
+        color: var(--ink);
+        font-weight: 700;
+        padding: 5px 15px;
+        border-radius: 999px;
+      }
+      .lang button[aria-pressed="true"] {
+        background: var(--btn);
+        color: var(--btn-ink);
+      }
+
+      /* ---------- Hero ---------- */
+      .folder {
+        position: relative;
+        margin-top: 30px;
+      }
+      .tab {
+        display: inline-block;
+        margin-left: 20px;
+        background: var(--btn);
+        color: var(--btn-ink);
+        padding: 8px 18px 6px;
+        border-radius: 14px 14px 0 0;
+        font-weight: 700;
+        font-size: 0.88rem;
+      }
+      .folder-flowers {
+        position: absolute;
+        top: -38px;
+        right: -8px;
+        width: 132px;
+        pointer-events: none;
+        z-index: 2;
+      }
+      .folder-flowers svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+      .folder-body {
+        background: var(--paper);
+        border: 2px solid var(--rose-deep);
+        border-radius: 6px 24px 24px 24px;
+        padding: 44px 20px 22px;
+        box-shadow: 7px 7px 0 var(--rose-pale);
+      }
+      .tag {
+        margin-top: 12px;
+        color: var(--ink-soft);
+        font-style: italic;
+      }
+      .form {
+        margin: 18px 0 0;
+      }
+      .form div {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin: 7px 0;
+      }
+      .form dt {
+        color: var(--ink-soft);
+        white-space: nowrap;
+      }
+      .form .dots {
+        flex: 1;
+        border-bottom: 2px dotted var(--line);
+        transform: translateY(-4px);
+      }
+      .form dd {
+        margin: 0;
+        font-weight: 700;
+        text-align: right;
+      }
+      .meter {
+        margin-top: 22px;
+      }
+      .meter-top {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .track {
+        height: 24px;
+        border-radius: 999px;
+        background: var(--rose-pale);
+        border: 2px solid var(--rose-deep);
+        overflow: hidden;
+      }
+      .fill {
+        height: 100%;
+        width: 0;
+        border-radius: 999px;
+        background: repeating-linear-gradient(
+          45deg,
+          var(--rose) 0 12px,
+          #ff9ec4 12px 24px
+        );
+      }
+      .track.full {
+        animation: wobble 0.5s ease 1;
+      }
+      .meter-note {
+        margin-top: 8px;
+        color: var(--ink-soft);
+        font-style: italic;
+        opacity: 0;
+        transition: opacity 0.5s;
+      }
+      .meter-note.on {
+        opacity: 1;
+      }
+      @keyframes wobble {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        30% {
+          transform: scale(1.03, 1.15);
+        }
+        60% {
+          transform: scale(0.99, 0.95);
+        }
+      }
+
+      /* ---------- Hearing 1 ---------- */
+      .receipt {
+        background: var(--paper);
+        border-top: 2px dashed var(--rose-deep);
+        border-bottom: 2px dashed var(--rose-deep);
+        padding: 16px 14px 18px;
+        margin-top: 16px;
+        min-height: 96px;
+      }
+      .row {
+        display: none;
+        margin: 0 0 14px;
+      }
+      .row.show {
+        display: block;
+        animation: pop 0.35s ease;
+      }
+      .row-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-weight: 500;
+      }
+      .row-head b {
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+      }
+      .bar {
+        height: 7px;
+        border-radius: 99px;
+        background: var(--rose);
+        margin-top: 5px;
+      }
+      .total {
+        display: none;
+        border-top: 2px solid var(--ink);
+        padding-top: 12px;
+        margin-top: 6px;
+      }
+      .total.show {
+        display: block;
+        animation: pop 0.4s ease;
+      }
+      .total .big {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.45rem;
+        font-weight: 800;
+        color: var(--rose-deep);
+        line-height: 1.2;
+      }
+      .total .small {
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+        margin-top: 6px;
+        font-style: italic;
+      }
+      .calc-actions {
+        margin-top: 16px;
+      }
+      @keyframes pop {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* ---------- Hearing 2: album ---------- */
+      .album {
+        position: relative;
+        display: grid;
+        perspective: 1500px;
+        margin-top: 18px;
+      }
+      .cover,
+      .inner {
+        grid-area: 1/1;
+      }
+      .cover {
+        position: relative;
+        z-index: 3;
+        transform-origin: left center;
+        min-height: 560px;
+        background: linear-gradient(150deg, #ff9ec4, #e5478a);
+        border-radius: 8px 24px 24px 8px;
+        box-shadow:
+          inset 16px 0 0 rgba(120, 0, 60, 0.18),
+          8px 10px 22px var(--shadow);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        padding: 34px 30px 34px 44px;
+        text-align: center;
+        color: #fff;
+        transition:
+          transform 0.95s cubic-bezier(0.5, 0, 0.2, 1),
+          opacity 0.2s 0.75s,
+          visibility 0s 0.95s;
+      }
+      .cover::before {
+        content: "";
+        position: absolute;
+        inset: 14px 14px 14px 30px;
+        border: 2.5px dashed rgba(255, 255, 255, 0.75);
+        border-radius: 6px 16px 16px 6px;
+        pointer-events: none;
+      }
+      .cover-flowers {
+        width: min(100%, 230px);
+      }
+      .cover-flowers svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .label {
+        background: #fffbfd;
+        color: #4b2140;
+        border-radius: 50% / 40%;
+        padding: 22px 26px;
+        box-shadow: 0 4px 0 rgba(120, 0, 60, 0.2);
+        transform: rotate(-2deg);
+      }
+      .label h2 {
+        font-size: 1.65rem;
+        margin: 0;
+        color: #4b2140;
+      }
+      .label p {
+        font-size: 0.9rem;
+        color: #7a4f6d;
+        margin-top: 2px;
+      }
+      .cover .btn {
+        background: #fffbfd;
+        color: #c92a6d;
+        box-shadow: 0 4px 0 rgba(120, 0, 60, 0.25);
+      }
+      .album.open .cover {
+        transform: rotateY(-172deg);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .inner {
+        position: relative;
+        visibility: hidden;
+        background: var(--paper);
+        border: 2px solid var(--line);
+        border-radius: 8px 24px 24px 8px;
+        padding: 22px 18px 20px 40px;
+        box-shadow: 6px 8px 20px var(--shadow);
+      }
+      .album.open .inner {
+        visibility: visible;
+      }
+      .rings {
+        position: absolute;
+        left: 8px;
+        top: 16px;
+        bottom: 16px;
+        width: 18px;
+        background: radial-gradient(
+            circle,
+            var(--bg) 0 3.5px,
+            var(--rose-deep) 4px 5.5px,
+            transparent 6px
+          )
+          0 0/18px 42px repeat-y;
+      }
+      .page {
+        transform-origin: left center;
+      }
+      .evid {
+        display: inline-block;
+        background: #fff1a8;
+        color: #4b2140;
+        font-weight: 700;
+        font-size: 0.88rem;
+        padding: 4px 14px;
+        transform: rotate(-2.5deg);
+        box-shadow: 0 2px 6px var(--shadow);
+      }
+      .polaroid {
+        position: relative;
+        margin: 18px auto 6px;
+        width: min(100%, 330px);
+        background: #fff;
+        padding: 12px 12px 10px;
+        box-shadow: 0 10px 22px var(--shadow);
+        transform: rotate(var(--tilt, -1.5deg));
+      }
+      .polaroid::before {
+        content: "";
+        position: absolute;
+        top: -11px;
+        left: 50%;
+        width: 92px;
+        height: 24px;
+        transform: translateX(-50%) rotate(3deg);
+        background: rgba(255, 158, 196, 0.78);
+      }
+      .photo {
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        background: #ffd6e5;
+      }
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .ph {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: linear-gradient(140deg, var(--g1), var(--g2));
+        color: rgba(75, 33, 64, 0.65);
+        font-weight: 500;
+        font-size: 0.92rem;
+      }
+      .cap {
+        font-family: "Caveat", "Segoe Script", "Bradley Hand", cursive;
+        font-size: 1.55rem;
+        text-align: center;
+        color: #4b2140;
+        margin-top: 6px;
+        line-height: 1.15;
+      }
+      .page p {
+        max-width: 44ch;
+      }
+      .album-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 18px;
+      }
+      .circle {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 2px solid var(--rose-deep);
+        background: var(--paper);
+        color: var(--rose-deep);
+        font-size: 1.3rem;
+        line-height: 1;
+        display: grid;
+        place-items: center;
+      }
+      .circle:disabled {
+        opacity: 0.35;
+        cursor: default;
+      }
+      .pos {
+        font-weight: 700;
+        color: var(--ink-soft);
+      }
+      .thumbs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin-top: 14px;
+      }
+      .thumb {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 2px solid transparent;
+        border-radius: 9px;
+        overflow: hidden;
+        background: linear-gradient(140deg, var(--g1), var(--g2));
+        opacity: 0.75;
+      }
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .thumb[aria-current="true"] {
+        border-color: var(--rose-deep);
+        opacity: 1;
+        transform: scale(1.12);
+      }
+
+      /* ---------- Hearing 3 ---------- */
+      .notes {
+        display: grid;
+        gap: 22px;
+        margin-top: 20px;
+      }
+      .note {
+        position: relative;
+        padding: 24px 18px 18px;
+        color: #4b2140;
+        box-shadow: 0 8px 16px var(--shadow);
+      }
+      .note::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        width: 80px;
+        height: 22px;
+        background: rgba(255, 255, 255, 0.6);
+        transform: translateX(-50%) rotate(-3deg);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+      }
+      .note:nth-child(1) {
+        background: #fff1a8;
+        transform: rotate(-1.6deg);
+        margin-right: 18px;
+      }
+      .note:nth-child(2) {
+        background: #ffd0e2;
+        transform: rotate(1.4deg);
+        margin-left: 18px;
+      }
+      .note:nth-child(3) {
+        background: #e3d5ff;
+        transform: rotate(-1deg);
+        margin-right: 10px;
+      }
+      .note:nth-child(4) {
+        background: #ffe3cf;
+        transform: rotate(1.2deg);
+        margin-left: 10px;
+      }
+      .who {
+        font-weight: 700;
+        font-size: 0.92rem;
+        margin-bottom: 6px;
+      }
+      .note blockquote {
+        margin: 0;
+        font-family: "Fraunces", Georgia, serif;
+        font-style: italic;
+        font-size: 1.12rem;
+        line-height: 1.4;
+      }
+
+      /* ---------- Hearing 4: distance map ---------- */
+      .map {
+        margin-top: 18px;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 2px solid var(--rose-deep);
+        background: var(--sea);
+        box-shadow: 6px 6px 0 var(--rose-pale);
+      }
+      .map svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .land {
+        fill: var(--land);
+        stroke: var(--rose-deep);
+        stroke-width: 1.8;
+        stroke-linejoin: round;
+      }
+      .route {
+        fill: none;
+        stroke: var(--rose-deep);
+        stroke-width: 4.5;
+        stroke-linecap: round;
+        stroke-dasharray: 0.1 11;
+      }
+      .mt {
+        font-family: "Figtree", system-ui, sans-serif;
+        fill: var(--ink);
+        paint-order: stroke;
+        stroke: var(--land);
+        stroke-width: 5;
+        stroke-linejoin: round;
+      }
+      .mt.sea {
+        stroke: var(--sea);
+        font-style: italic;
+        font-size: 22px;
+        fill: var(--ink-soft);
+        letter-spacing: 0.06em;
+      }
+      .mt.city {
+        font-weight: 700;
+        font-size: 30px;
+      }
+      .mt.role {
+        font-size: 22px;
+        fill: var(--rose-deep);
+        font-weight: 500;
+      }
+      .mt.small {
+        font-size: 19px;
+        fill: var(--ink-soft);
+        stroke: var(--land);
+      }
+      .mt.tiny {
+        font-size: 18px;
+        fill: var(--ink-soft);
+        stroke: var(--sea);
+      }
+      .pin {
+        fill: var(--btn);
+        stroke: #fff;
+        stroke-width: 3.5;
+      }
+      .pulse {
+        fill: none;
+        stroke: var(--rose-deep);
+        stroke-width: 2.5;
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: pulse 2.4s ease-out infinite;
+      }
+      .pulse.b {
+        animation-delay: 1.2s;
+      }
+      @keyframes pulse {
+        from {
+          transform: scale(0.7);
+          opacity: 0.9;
+        }
+        to {
+          transform: scale(3);
+          opacity: 0;
+        }
+      }
+      .plane {
+        fill: #fff;
+        stroke: var(--rose-deep);
+        stroke-width: 2;
+        stroke-linejoin: round;
+      }
+      .pill {
+        fill: var(--btn);
+      }
+      .pilltxt {
+        fill: var(--btn-ink);
+        font-family: "Figtree", system-ui, sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .chip {
+        background: var(--paper);
+        border: 2px solid var(--line);
+        border-radius: 999px;
+        padding: 7px 16px;
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+      .chip.heart {
+        background: var(--btn);
+        color: var(--btn-ink);
+        border-color: var(--btn);
+      }
+      .dist-line {
+        margin-top: 18px;
+        font-family: "Fraunces", Georgia, serif;
+        font-style: italic;
+        font-size: 1.15rem;
+        line-height: 1.45;
+      }
+      .dist-note {
+        color: var(--ink-soft);
+        font-size: 0.92rem;
+        margin-top: 8px;
+      }
+
+      /* ---------- Hearing 5 ---------- */
+      .ba {
+        --p: 6%;
+        position: relative;
+        height: 250px;
+        margin-top: 18px;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 2px solid var(--rose-deep);
+        touch-action: pan-y;
+      }
+      .pane {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 24px 26px 60px;
+      }
+      .pane h3 {
+        margin: 0 0 8px;
+      }
+      .pane p {
+        max-width: 30ch;
+      }
+      .pane.before {
+        background: var(--before-bg);
+        color: var(--before-ink);
+      }
+      .pane.after {
+        background: linear-gradient(135deg, #ffc2da, #ff86b6);
+        color: #3a0f28;
+        clip-path: inset(0 calc(100% - var(--p)) 0 0);
+      }
+      .ba::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: var(--p);
+        width: 4px;
+        margin-left: -2px;
+        background: #fff;
+        pointer-events: none;
+      }
+      .handle {
+        position: absolute;
+        bottom: 14px;
+        left: var(--p);
+        width: 46px;
+        height: 46px;
+        margin-left: -23px;
+        border-radius: 50%;
+        background: #fff;
+        color: #c92a6d;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        z-index: 2;
+        pointer-events: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+      .ba input {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        cursor: ew-resize;
+        z-index: 3;
+      }
+      .ba:focus-within {
+        outline: 3px solid var(--rose-deep);
+        outline-offset: 3px;
+      }
+      .hint {
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+        margin-top: 8px;
+        text-align: center;
+      }
+
+      /* ---------- Bouquet ---------- */
+      .bouquet {
+        max-width: 340px;
+        margin: 14px auto 0;
+      }
+      .bouquet svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+      }
+      .flw {
+        cursor: pointer;
+        outline: none;
+      }
+      .bloom {
+        transition: transform 0.25s cubic-bezier(0.3, 1.6, 0.5, 1);
+      }
+      .bouquet:not(.in) .bloom {
+        transform: scale(0);
+      }
+      .bouquet.in .bloom {
+        animation: bloom 0.75s cubic-bezier(0.3, 1.5, 0.5, 1) backwards;
+        animation-delay: calc(var(--d) * 130ms);
+      }
+      .flw.sel .bloom {
+        transform: scale(1.18);
+      }
+      .ring {
+        fill: none;
+        stroke: var(--rose-deep);
+        stroke-width: 2.5;
+        stroke-dasharray: 3 6;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .flw.sel .ring,
+      .flw:focus-visible .ring {
+        opacity: 1;
+      }
+      @keyframes bloom {
+        from {
+          transform: scale(0) rotate(-50deg);
+        }
+        to {
+          transform: scale(1) rotate(0);
+        }
+      }
+      .promise {
+        margin-top: 18px;
+        background: var(--paper);
+        border: 2px solid var(--line);
+        border-left: 6px solid var(--rose-deep);
+        border-radius: 6px 18px 18px 6px;
+        padding: 16px 18px;
+        min-height: 88px;
+        display: flex;
+        align-items: center;
+        font-family: "Fraunces", Georgia, serif;
+        font-style: italic;
+        font-size: 1.12rem;
+        line-height: 1.45;
+      }
+      .promise.flip {
+        animation: pop 0.35s ease;
+      }
+
+      /* ---------- Verdict ---------- */
+      .verdict-wrap {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .cert {
+        display: none;
+        margin-top: 26px;
+        text-align: left;
+      }
+      .cert.on {
+        display: block;
+      }
+      .stamp-row {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 22px;
+      }
+      .stamp {
+        display: inline-block;
+        border: 5px double var(--stamp);
+        color: var(--stamp);
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 800;
+        font-size: 1.45rem;
+        letter-spacing: 0.06em;
+        text-align: center;
+        line-height: 1.15;
+        transform: rotate(-7deg);
+        opacity: 0;
+      }
+      .cert.on .stamp {
+        animation: stamp 0.55s cubic-bezier(0.3, 1.5, 0.5, 1) forwards;
+      }
+      @keyframes stamp {
+        0% {
+          opacity: 0;
+          transform: rotate(-20deg) scale(2.6);
+        }
+        60% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+          transform: rotate(-7deg) scale(1);
+        }
+      }
+      .letter {
+        background: var(--paper);
+        border: 2px solid var(--line);
+        border-radius: 6px;
+        padding: 18px 20px 22px;
+        box-shadow: 0 8px 20px var(--shadow);
+        opacity: 0;
+      }
+      .cert.on .letter {
+        animation: pop 0.6s ease 0.55s forwards;
+      }
+      .letter p {
+        font-family: "Fraunces", Georgia, serif;
+        font-style: italic;
+        font-size: 1.08rem;
+        line-height: 32px;
+        background: repeating-linear-gradient(
+          transparent 0 31px,
+          var(--line) 31px 32px
+        );
+      }
+      .letter p + p {
+        margin-top: 32px;
+      }
+      .sign {
+        text-align: right;
+      }
+      .closing {
+        text-align: center;
+        color: var(--ink-soft);
+        margin-top: 34px;
+        font-size: 0.95rem;
+      }
+      .fx {
+        position: fixed;
+        pointer-events: none;
+        font-size: 1.5rem;
+        z-index: 50;
+        line-height: 1;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-delay: 0s !important;
+          transition-duration: 0.01ms !important;
+          transition-delay: 0s !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="bgMusic" loop preload="auto">
+      <source src="lagu.mp3" type="audio/mpeg" />
+    </audio>
+    <main>
+      <div class="top">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="id" aria-pressed="true">ID</button>
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <header class="folder">
+        <div class="tab" data-t="tab"></div>
+        <div class="folder-flowers" id="heroFlowers" aria-hidden="true"></div>
+        <div class="folder-body">
+          <h1 data-t="h1"></h1>
+          <p class="tag" data-t="tag"></p>
+          <dl class="form">
+            <div>
+              <dt data-t="f1"></dt>
+              <span class="dots" aria-hidden="true"></span>
+              <dd data-t="f1v"></dd>
+            </div>
+            <div>
+              <dt data-t="f2"></dt>
+              <span class="dots" aria-hidden="true"></span>
+              <dd data-t="f2v"></dd>
+            </div>
+            <div>
+              <dt data-t="f3"></dt>
+              <span class="dots" aria-hidden="true"></span>
+              <dd data-t="f3v"></dd>
+            </div>
+            <div>
+              <dt data-t="f4"></dt>
+              <span class="dots" aria-hidden="true"></span>
+              <dd data-t="f4v"></dd>
+            </div>
+            <div>
+              <dt data-t="f5"></dt>
+              <span class="dots" aria-hidden="true"></span>
+              <dd data-t="f5v"></dd>
+            </div>
+          </dl>
+          <div class="meter">
+            <div class="meter-top">
+              <span data-t="meter"></span><span id="pct">0%</span>
+            </div>
+            <div
+              class="track"
+              id="track"
+              role="progressbar"
+              data-al="meter"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="100"
+            >
+              <div class="fill" id="fill"></div>
+            </div>
+            <p class="meter-note" id="mnote" data-t="mnote"></p>
+          </div>
+        </div>
+      </header>
+
+      <!-- HEARING 1 -->
+      <section aria-labelledby="s1">
+        <h2 id="s1" data-t="s1"></h2>
+        <p class="lead" data-t="s1l"></p>
+        <div class="receipt" aria-live="polite">
+          <div id="rows"></div>
+          <div class="total" id="total">
+            <div class="big" data-t="tot"></div>
+            <p class="small" data-t="tots"></p>
+          </div>
+        </div>
+        <div class="calc-actions">
+          <button class="btn" id="calc" type="button"></button>
+        </div>
+      </section>
+
+      <!-- HEARING 2 -->
+      <section aria-labelledby="s2">
+        <h2 id="s2" data-t="s2"></h2>
+        <p class="lead" data-t="s2l"></p>
+        <div class="album" id="album">
+          <div class="cover" id="cover">
+            <div
+              class="cover-flowers"
+              id="coverFlowers"
+              aria-hidden="true"
+            ></div>
+            <div class="label">
+              <h2 data-t="cov1"></h2>
+              <p data-t="cov2"></p>
+            </div>
+            <button
+              class="btn"
+              id="openAlbum"
+              type="button"
+              data-t="open"
+            ></button>
+          </div>
+          <div class="inner" id="inner" tabindex="-1">
+            <div class="rings" aria-hidden="true"></div>
+            <div class="page" id="page" aria-live="polite"></div>
+            <div class="album-nav">
+              <button class="circle" id="prev" type="button" data-al="prev">
+                &#8249;
+              </button>
+              <span class="pos" id="pos"></span>
+              <button class="circle" id="next" type="button" data-al="next">
+                &#8250;
+              </button>
+            </div>
+            <div class="thumbs" id="thumbs"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HEARING 3 -->
+      <section aria-labelledby="s3">
+        <h2 id="s3" data-t="s3"></h2>
+        <p class="lead" data-t="s3l"></p>
+        <div class="notes" id="notes"></div>
+      </section>
+
+      <!-- HEARING 4: distance -->
+      <section aria-labelledby="s4">
+        <h2 id="s4" data-t="s4"></h2>
+        <p class="lead" data-t="s4l"></p>
+        <div class="map" id="map" role="img" data-al="mapal"></div>
+        <div class="chips">
+          <span class="chip" id="chip1"></span>
+          <span class="chip" data-t="chip2"></span>
+          <span class="chip heart" data-t="chip3"></span>
+        </div>
+        <p class="dist-line" data-t="distline"></p>
+        <p class="dist-note" data-t="distnote"></p>
+      </section>
+
+      <!-- HEARING 5 -->
+      <section aria-labelledby="s5">
+        <h2 id="s5" data-t="s5"></h2>
+        <p class="lead" data-t="s5l"></p>
+        <div class="ba" id="ba">
+          <div class="pane before">
+            <h3 data-t="bt"></h3>
+            <p data-t="bp"></p>
+          </div>
+          <div class="pane after" aria-hidden="true">
+            <h3 data-t="at"></h3>
+            <p data-t="ap"></p>
+          </div>
+          <div class="handle" aria-hidden="true">&#8249;&#8250;</div>
+          <input
+            type="range"
+            id="range"
+            min="6"
+            max="94"
+            value="6"
+            data-al="rangeal"
+          />
+        </div>
+        <p class="hint" data-t="hint"></p>
+      </section>
+
+      <!-- BOUQUET -->
+      <section aria-labelledby="s6">
+        <h2 id="s6" data-t="s6"></h2>
+        <p class="lead" data-t="s6l"></p>
+        <div class="bouquet" id="bouquet"></div>
+        <div class="promise" id="promise" aria-live="polite"></div>
+      </section>
+
+      <!-- VERDICT -->
+      <section aria-labelledby="s7">
+        <h2 id="s7" data-t="s7"></h2>
+        <p class="lead" data-t="s7l"></p>
+        <div class="verdict-wrap">
+          <button class="btn" id="gavel" type="button" data-t="gavel"></button>
+        </div>
+        <div class="cert" id="cert">
+          <div class="stamp-row"><div class="stamp" data-th="stamp"></div></div>
+          <div class="letter">
+            <p data-t="l1"></p>
+            <p data-t="l2"></p>
+            <p data-t="l3"></p>
+            <p data-t="l4"></p>
+            <p class="sign" data-t="sign"></p>
+          </div>
+          <p class="closing" data-t="closing"></p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      /* ============================================================
+   ISI KONTEN: edit di sini. Dua bahasa: en dan id.
+   Foto: isi "src" di PHOTOS (data URL). Kosong = placeholder.
+   ============================================================ */
+      const PHOTOS = [
+        "img14.jpeg",
+        "img13.jpeg",
+        "img23.jpeg",
+        "img15.jpeg",
+        "img16.jpeg",
+        "img24.jpeg",
+        "img17.jpeg",
+        "img18.jpeg",
+        "img19.jpeg",
+        "img20.jpeg",
+        "img21.jpeg",
+        "img22.jpeg",
+      ];
+
+      const T = {
+        en: {
+          title: "The Case of the Stolen Heart",
+          tab: "Case File No. 001",
+          h1: "The Case of the Stolen Heart",
+          tag: "The reason I'm okay with losing my heart. Filed by someone who found his home inside you.",
+          f1: "Suspect",
+          f1v: "Afifah Afidhiani",
+          f2: "Complainant",
+          f2v: "Septian Hakim",
+          f3: "Case",
+          f3v: "Theft of a heart (Article 143)",
+          f4: "Evidence",
+          f4v: "12 pieces",
+          f5: "Status",
+          f5v: "Court is in session",
+          meter: "Heart stolen",
+          mnote: "Completely stolen. Because my heart already chose you.",
+          s1: "Hearing 1: The odds calculator",
+          s1l: "How small were the odds of Septian Hakim finding someone like Afifah Afidhiani? Let's count the little miracles.",
+          calc_btn: "Calculate the odds",
+          calc_busy: "Calculating...",
+          calc_again: "Calculate again",
+          tot: "Total odds: one occurrence that feels incredibly rare",
+          tots: "The math might be a joke. But the love is real.",
+          calc: [
+            [
+              "Two people on Earth who had to meet",
+              "an extremely tiny chance",
+              100,
+            ],
+            [
+              "Being in the same place at the same time",
+              "a beautiful coincidence",
+              82,
+            ],
+            [
+              "Finding each other among millions of people",
+              "impossible to predict",
+              64,
+            ],
+            [
+              "Having stories that could complete one another",
+              "incredibly rare",
+              48,
+            ],
+            ["Finding and choosing each other", "a miracle", 34],
+            [
+              "And Septian finding Afifah from a different city",
+              "beyond calculation",
+              6,
+            ],
+          ],
+          s2: "Hearing 2: The evidence",
+          s2l: "Twelve pieces of evidence, one album. Open it and turn the pages.",
+          cov1: "Evidence Album",
+          cov2: "Case File No. 001",
+          open: "Open the album",
+          prev: "Previous page",
+          next: "Next page",
+          exh: "Evidence",
+          of: "of",
+          ph: "Place photo #%n here",
+          bukti: [
+            [
+              "Where it began",
+              "You turned simple moments into memories I never want to lose.",
+              "I realized the best moments don't need anything special. Sometimes all it takes is you, and an ordinary day becomes a memory I want to experience again and again.",
+            ],
+            [
+              "Your Endless Patience",
+              "You've always been patient with every version of me.",
+              "I know I have flaws and moments when I am difficult to understand. But you kept choosing to stay, to listen, and to love me in ways that made me feel accepted. Thank you for being patient with every part of me.",
+            ],
+            [
+              "My favorite sound",
+              "Your laugh",
+              "The best sound I know. If I could keep one thing from every day, that would be it.",
+            ],
+            [
+              "Present without saying much",
+              "You're there when I'm worn out",
+              "You don't need to say much. Just being there is enough to make the weight of my day feel lighter.",
+            ],
+            [
+              "A better version of me",
+              "You make me want to be better",
+              "Not because you ask me to. Because I want to be worthy of the way you look at me.",
+            ],
+            [
+              "The one I can't stop looking at",
+              "There is something about you that always pulls me closer",
+              "Maybe it's your smile, maybe it's the way you carry yourself, or maybe it's simply because everything about you always finds a way to stay on my mind.",
+            ],
+            [
+              "The culprit, found",
+              "You're the only one who did it",
+              "Out of everyone in the world, only you managed to get in and steal my heart. And I don't want it back.",
+            ],
+            [
+              "Little moments",
+              "Every small memory with you matters",
+              "Simple chats, small jokes, and quiet time together become favorite memories because you're in all of them.",
+            ],
+            [
+              "My safest place",
+              "You feel like home",
+              "However heavy my day gets, just knowing you're there makes everything feel lighter.",
+            ],
+            [
+              "The future I picture",
+              "I see tomorrow with you in it",
+              "I don't need a perfect story. I just want a story where we keep choosing each other.",
+            ],
+            [
+              "The final proof",
+              "My heart was always meant for you",
+              "After all the evidence is gathered, there's only one conclusion: my heart found its place when it found you.",
+            ],
+            [
+              "Case closed forever",
+              "No regrets, only gratitude",
+              "The biggest proof is simple: loving you is a decision I'd make again and again.",
+            ],
+          ],
+          s3: "Hearing 3: Witness statements",
+          s3l: "Little things about you I quietly kept as evidence.",
+          saksi: [
+            [
+              "Witness 1: the way you laugh",
+              "Your eyes disappear, your shoulders shake, and I end up laughing too even when I don't know what's funny.",
+            ],
+            [
+              "Witness 2: your habit",
+              "You always ask if I've eaten, way before you remember you haven't eaten yourself.",
+            ],
+            [
+              "Witness 3: your text replies",
+              'Just says "okay", but I know it means "okay, love".',
+            ],
+            [
+              "Witness 4: you when you're sleepy",
+              "You talk nonsense, your voice goes soft. I keep every bit of it.",
+            ],
+          ],
+          s4: "Hearing 4: Location and distance",
+          s4l: "The suspect is in Solo, the victim is in Jakarta. The numbers say far. My heart says next door.",
+          mapal:
+            "Map of Java, Indonesia, showing the flight route from Jakarta to Solo",
+          map_me: "victim",
+          map_you: "suspect",
+          sea_n: "Java Sea",
+          sea_s: "Indian Ocean",
+          chip1: "about %k km apart",
+          chip2: "1 hour by plane",
+          chip3: "0 km between two hearts",
+          distline:
+            "The evidence, meaning my heart, is currently in Solo. So every kilometer between us is one more reason I always choose to come to you.",
+          distnote:
+            "That dotted line is the route I'd take, every single time.",
+          s5: "Hearing 5: Before and after",
+          s5l: "Slide to see the difference.",
+          bt: "Me before meeting you",
+          bp: "Eating whenever, sleeping whenever, living life with no real direction.",
+          at: "Me now",
+          ap: "Still a mess, but now there's someone who makes me want to come home, even if that home is just a phone screen.",
+          hint: "Left: before. Right: after.",
+          rangeal: "Slide from before meeting you to now",
+          s6: "Final request: a bouquet for you",
+          s6l: "I'm not asking for my heart back. Tap each flower to read my promises.",
+          flower: "Flower",
+          pdef: "Tap a flower to read a promise.",
+          promises: [
+            "I promise to keep choosing you, not only in the easy moments, but also in the days when things feel difficult. Because loving you is not just a feeling, it is a choice I want to make over and over again.",
+            "I promise to always be there for you. In your happiest moments, in your hardest days, and in every moment when you need someone to hold your hand. You will never have to face anything alone as long as I am here.",
+            "I promise that no distance will ever change the way I choose you. Even when I can't be right beside you, my love, my prayers, and every effort I make will always find their way to you",
+            "I promise to keep finding my way back to you. No matter how far the distance feels, no matter how slow the journey is, I will always choose every step that brings me closer to you.",
+            "I promise you'll always be the light I look for, even on the days when everything feels dark. Your presence has a way of making my hardest days feel a little easier, and I hope I can always be the same light for you too.",
+          ],
+          s7: "The verdict",
+          s7l: "The judge is ready. One final tap.",
+          gavel: "Bang the gavel 🔨",
+          stamp: "GUILTY<br>HEART THIEF",
+          l1: "For you,",
+          l2: "If there were a court for feelings, I'd gladly be sentenced for life for loving you. You're proven guilty of stealing my heart, taking the best part of me, and without even realizing it, making me a happier person. Thank you for coming into my life. Thank you for being patient with all my flaws. You're not just someone I love, you're the prayer I once made quietly, the answer to so many things I used to wait for. If I ever forget how precious you are, remind me that someone once made my life feel so much more beautiful just by being in it.",
+          l3: "Distance is just a number trying to stand between two hearts that have already found each other. Because every step away from you always leads back to one place: you.",
+          l4: "Your sentence is simple: never let go of my hand. Stay the person I look for when I'm happy, and the one I want to hold when the world feels heavy.",
+          sign: "Yours. Today, tomorrow, on the good days and the bad, for as long as this heart keeps beating and your name is still the reason I smile.",
+          closing:
+            "Court is adjourned. But I hope our story never has a final page. Because even given a thousand chances to live life over, I'd still choose to find you, and fall in love all over again.",
+        },
+        id: {
+          title: "Kasus Pencurian Hati",
+          tab: "Berkas Perkara No. 001",
+          h1: "Kasus Pencurian Hati",
+          tag: "Alasan kenapa aku rela kehilangan hatiku. Dilaporkan oleh seseorang yang menemukan rumahnya di dalam diri kamu.",
+          f1: "Tersangka",
+          f1v: "Afifah Afidhiani",
+          f2: "Pelapor",
+          f2v: "Septian Hakim",
+          f3: "Perkara",
+          f3v: "Pencurian hati (Pasal 143)",
+          f4: "Barang bukti",
+          f4v: "12 buah",
+          f5: "Status",
+          f5v: "Sidang dibuka",
+          meter: "Hati yang dicuri",
+          mnote: "Dicuri sepenuhnya. Karena hatiku memang sudah memilih kamu.",
+          s1: "Sidang 1: Kalkulator peluang",
+          s1l: "Seberapa kecil kemungkinan Septian Hakim menemukan seseorang seperti Afifah Afidhiani? Mari hitung keajaiban kecilnya.",
+          calc_btn: "Hitung peluangnya",
+          calc_busy: "Lagi ngitung...",
+          calc_again: "Hitung ulang",
+          tot: "Peluang total: satu kejadian yang terasa sangat langka",
+          tots: "Hitungannya mungkin bercanda. Tapi rasa sayangnya nyata.",
+          calc: [
+            [
+              "Dua orang di bumi yang harus bertemu",
+              "kesempatan yang sangat kecil",
+              100,
+            ],
+            [
+              "Berada di tempat dan waktu yang sama",
+              "sebuah kebetulan indah",
+              82,
+            ],
+            [
+              "Saling mengenal di antara jutaan manusia",
+              "tidak bisa diprediksi",
+              64,
+            ],
+            [
+              "Memiliki cerita yang bisa saling melengkapi",
+              "sangat jarang terjadi",
+              48,
+            ],
+            [
+              "Saling menemukan dan memilih satu sama lain",
+              "sebuah keajaiban",
+              34,
+            ],
+            [
+              "Dan Septian menemukan Afifah dari kota yang berbeda",
+              "di luar hitungan",
+              6,
+            ],
+          ],
+          s2: "Sidang 2: Barang bukti",
+          s2l: "Dua belas barang bukti, satu album. Buka dan geser halamannya.",
+          cov1: "Album Barang Bukti",
+          cov2: "Berkas No. 001",
+          open: "Buka album",
+          prev: "Halaman sebelumnya",
+          next: "Halaman berikutnya",
+          exh: "Barang bukti",
+          of: "dari",
+          ph: "Taruh foto #%n di sini",
+          bukti: [
+            [
+              "Awal Cerita Kita",
+              "Kamu membuat hal-hal sederhana berubah menjadi kenangan yang paling aku hargai.",
+              "Aku sadar, momen terbaik ngga selalu butuh sesuatu yang luar biasa. Kadang cukup ada kamu, dan hari biasa berubah menjadi sesuatu yang ingin aku ulang lagi.",
+            ],
+            [
+              "Kesabaranmu Untukku",
+              "Kamu tetap sabar dengan setiap versi diriku.",
+              "Aku tahu aku punya banyak kekurangan dan ada saatnya aku sulit untuk dimengerti. Tapi kamu tetap memilih bertahan, mendengarkan, dan mencintaiku dengan cara yang membuatku merasa diterima. Terima kasih sudah sabar dengan setiap bagian dari diriku.",
+            ],
+            [
+              "Suara favorit",
+              "Tawamu",
+              "Suara paling enak yang aku kenal. Kalau boleh nyimpen satu hal dari tiap hari, itu jawabannya.",
+            ],
+            [
+              "Hadir tanpa banyak omong",
+              "Kamu ada pas aku lagi capek",
+              "Kamu ngga perlu ngomong banyak. Cukup ada, dan berat hariku langsung ringan.",
+            ],
+            [
+              "Versi diriku yang lebih baik",
+              "Kamu bikin aku pengen jadi lebih baik",
+              "Bukan karena kamu minta. Karena aku pengen pantas buat cara kamu menatapku.",
+            ],
+            [
+              "Yang selalu ingin aku lihat",
+              "Selalu ada sesuatu dari kamu yang menarik aku lebih dekat",
+              "Entah itu senyummu, caramu membawa diri, atau mungkin karena semua tentang kamu selalu punya cara untuk tinggal lebih lama di pikiranku.",
+            ],
+            [
+              "Pelaku sudah ketahuan",
+              "Kamu satu-satunya pelakunya",
+              "Dari sekian banyak orang di dunia, cuma kamu yang berhasil masuk dan nyuri hatiku. Dan aku ngga mau hatiku dikembalikan.",
+            ],
+            [
+              "Momen-momen kecil",
+              "Setiap kenangan kecil sama kamu berarti",
+              "Obrolan sederhana, candaan kecil, dan waktu tenang bareng kamu jadi kenangan favorit karena semuanya punya kamu di dalamnya.",
+            ],
+            [
+              "Tempat ternyamanku",
+              "Kamu terasa seperti rumah",
+              "Sebesar apa pun hari yang aku jalani, tahu kamu ada selalu bikin semuanya terasa lebih ringan.",
+            ],
+            [
+              "Masa depan yang aku bayangkan",
+              "Aku melihat hari esok bersamamu",
+              "Aku ngga butuh cerita yang sempurna. Aku cuma mau cerita di mana kita terus memilih satu sama lain.",
+            ],
+            [
+              "Bukti terakhir",
+              "Hatiku memang untuk kamu",
+              "Setelah semua bukti terkumpul, kesimpulannya cuma satu: hatiku menemukan tempatnya saat menemukan kamu.",
+            ],
+            [
+              "Kasus ditutup selamanya",
+              "Tanpa penyesalan, penuh rasa syukur",
+              "Bukti terbesar itu sederhana: mencintai kamu adalah keputusan yang akan aku pilih lagi dan lagi.",
+            ],
+          ],
+          s3: "Sidang 3: Keterangan saksi",
+          s3l: "Hal-hal kecil dari kamu yang diam-diam aku simpen sebagai bukti.",
+          saksi: [
+            [
+              "Saksi 1: caramu tertawa",
+              "Matamu hilang, bahumu goyang, aku ikut ketawa padahal ngga tau lucunya di mana.",
+            ],
+            [
+              "Saksi 2: kebiasaanmu",
+              "Kamu selalu nanya aku udah makan atau belum, jauh sebelum inget kamu sendiri belum makan.",
+            ],
+            [
+              "Saksi 3: balesan chatmu",
+              'Isinya cuma "oke", tapi aku tau artinya "oke, sayang".',
+            ],
+            [
+              "Saksi 4: kamu pas ngantuk",
+              "Ngomongnya ngaco, suaranya pelan. Semuanya aku simpen.",
+            ],
+          ],
+          s4: "Sidang 4: Lokasi kejadian dan jarak",
+          s4l: "Tersangka di Solo, korban di Jakarta. Angkanya bilang jauh. Hatiku bilang sebelah rumah.",
+          mapal:
+            "Peta Pulau Jawa, Indonesia, dengan garis penerbangan putus-putus dari Jakarta ke Solo",
+          map_me: "korban",
+          map_you: "tersangka",
+          sea_n: "Laut Jawa",
+          sea_s: "Samudra Hindia",
+          chip1: "sekitar %k km jaraknya",
+          chip2: "1 jam naik pesawat",
+          chip3: "0 km antara hati kita",
+          distline:
+            "Barang buktinya, yaitu hatiku, sekarang ada di Solo. Jadi tiap kilometer di antara kita adalah alasan aku selalu milih buat nyamperin kamu.",
+          distnote:
+            "Garis titik-titik itu jalur yang bakal aku tempuh, setiap saat.",
+          s5: "Sidang 5: Sebelum dan sesudah kejadian",
+          s5l: "Geser buat lihat bedanya.",
+          bt: "Aku sebelum ketemu kamu",
+          bp: "Makan seadanya, tidur sesempatnya, hidup jalan sendiri tanpa arah.",
+          at: "Aku sekarang",
+          ap: "Masih berantakan, tapi sekarang ada yang bikin aku pengen pulang, walau rumahnya cuma layar HP.",
+          hint: "Kiri: sebelum. Kanan: sesudah.",
+          rangeal: "Geser dari aku sebelum ketemu kamu ke aku sekarang",
+          s6: "Permohonan terakhir: buket buat kamu",
+          s6l: "Aku ngga minta hatiku dikembalikan. Ketuk tiap bunga buat baca janjiku.",
+          flower: "Bunga",
+          pdef: "Ketuk satu bunga buat baca janjiku.",
+          promises: [
+            "Aku berjanji akan tetap memilih kamu di setiap kehidupan, di setiap versi cerita kita, dan di setiap kesempatan yang diberikan kepadaku. Kalau aku harus menemukan kamu seribu kali pun, aku tetap akan memilih kamu setiap kali.",
+            "Aku berjanji, seberat apa pun perjalanan kita nanti, kamu akan selalu punya aku. Aku ingin menjadi tempat kamu pulang, orang yang mendengarkan semua ceritamu, dan seseorang yang tetap memilih tinggal ketika semuanya terasa sulit.",
+            "Aku berjanji jarak tidak akan pernah menjadi alasan untuk membuat kamu merasa sendirian. Sampai hari di mana aku bisa menggenggam tanganmu, aku akan terus membuktikan bahwa hatiku selalu ada bersamamu.",
+            "Aku berjanji tidak akan pernah berhenti berusaha mendekatkan jarak di antara kita. Walaupun harus melewati satu langkah kecil demi satu langkah kecil, aku akan tetap berjalan menuju kamu, karena kamu adalah tujuan yang selalu dipilih hatiku.",
+            "Aku berjanji, seberat apa pun hari yang kita lewati nanti, aku akan selalu bersyukur atas cahaya yang kamu bawa ke hidupku. Kamu bukan hanya matahariku, kamu adalah alasan aku masih percaya bahwa hal-hal indah layak untuk diperjuangkan.",
+          ],
+          s7: "Putusan",
+          s7l: "Hakim siap. Tinggal satu ketukan.",
+          gavel: "Ketuk palu 🔨",
+          stamp: "TERBUKTI<br>MENCURI HATI",
+          l1: "Untuk kamu,",
+          l2: "Kalau ada pengadilan untuk perasaan, aku rela dihukum seumur hidup karena mencintai kamu. Kamu terbukti mencuri hatiku, mengambil bagian terbaik dari diriku, lalu tanpa sadar membuatku menjadi seseorang yang lebih bahagia. Terima kasih sudah datang di hidupku. Terima kasih sudah sabar dengan semua kurangku. Kamu bukan cuma orang yang aku cintai, kamu adalah doa yang pernah aku minta diam-diam, jawaban dari banyak hal yang dulu aku tunggu. Kalau suatu hari aku lupa betapa berharganya kamu, ingatkan aku bahwa ada seseorang yang pernah membuat hidupku terasa jauh lebih indah hanya dengan hadir.",
+          l3: "Jarak hanya angka yang mencoba menghalangi dua hati yang sudah saling menemukan. Karena setiap langkah yang menjauh darimu selalu punya satu tujuan: kembali kepadamu.",
+          l4: "Hukumanmu cuma satu: jangan pernah lepaskan tanganku. Tetap jadi orang yang aku cari saat bahagia, dan orang yang ingin aku peluk saat dunia terasa berat.",
+          sign: "Punyamu. Hari ini, besok, di hari baik maupun buruk, selama jantung ini masih berdetak dan namamu masih jadi alasan aku tersenyum.",
+          closing:
+            "Sidang ditutup. Tapi aku harap kisah kita tidak pernah punya halaman terakhir. Karena kalau diberi kesempatan mengulang hidup seribu kali pun, aku tetap ingin menemukan kamu, lalu jatuh cinta lagi dari awal.",
+        },
+      };
+
+      /* ============================================================ */
+      const $ = (s) => document.querySelector(s);
+      const reduce = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      let lang = "id";
+      try {
+        const s = localStorage.getItem("bp-lang");
+        if (s === "id" || s === "en") lang = s;
+      } catch (e) {}
+      const D = () => T[lang];
+      const renderers = [];
+
+      /* ---------- gambar bunga ---------- */
+      function ring(n, len, w, fill, rot, stroke) {
+        let g = "";
+        for (let i = 0; i < n; i++) {
+          g += `<ellipse cx="0" cy="${(-len / 2).toFixed(1)}" rx="${w.toFixed(1)}" ry="${(len / 2).toFixed(1)}" fill="${fill}"${stroke ? ` stroke="${stroke}" stroke-width=".9"` : ""} transform="rotate(${(rot + (i * 360) / n).toFixed(1)})"/>`;
+        }
+        return g;
+      }
+      const KINDS = {
+        rose: (r) =>
+          ring(8, r, r * 0.34, "#FF7AAE", 0, "#FFD3E4") +
+          ring(6, r * 0.78, r * 0.3, "#FF5A9A", 20, "#FFD3E4") +
+          ring(5, r * 0.52, r * 0.26, "#E63A80", 10) +
+          `<circle r="${r * 0.14}" fill="#B81660"/>`,
+        daisy: (r) =>
+          ring(12, r, r * 0.16, "#FFFFFF", 0, "#F2C6D8") +
+          `<circle r="${r * 0.24}" fill="#FFC83D"/>`,
+        sakura: (r) =>
+          ring(5, r, r * 0.38, "#FFC4DB", 0, "#FF9DC2") +
+          `<circle r="${r * 0.15}" fill="#FF6FA5"/>`,
+        lav: (r) =>
+          ring(6, r, r * 0.27, "#CDAEFF", 0, "#AE86F5") +
+          ring(6, r * 0.6, r * 0.2, "#A77BFF", 30) +
+          `<circle r="${r * 0.12}" fill="#FFF1A8"/>`,
+        sun: (r) =>
+          ring(14, r, r * 0.15, "#FFC93C", 0) +
+          ring(14, r * 0.82, r * 0.14, "#FFB000", 12.86) +
+          `<circle r="${r * 0.34}" fill="#7A4A2B"/><circle r="${r * 0.2}" fill="#5A3320"/>`,
+      };
+      const leaf = (x, y, rot, s = 1) =>
+        `<ellipse cx="${x}" cy="${y}" rx="${9 * s}" ry="${22 * s}" fill="#7BCB9A" stroke="#5FB884" stroke-width="1.2" transform="rotate(${rot} ${x} ${y})"/>`;
+      const head = (x, y, r, k) =>
+        `<g transform="translate(${x} ${y})">${KINDS[k](r)}</g>`;
+
+      $("#heroFlowers").innerHTML =
+        `<svg viewBox="0 0 150 112">${leaf(66, 92, -30, 0.9)}${leaf(100, 90, 40, 0.8)}${head(38, 62, 26, "sakura")}${head(88, 48, 32, "rose")}${head(124, 80, 22, "daisy")}</svg>`;
+      $("#coverFlowers").innerHTML =
+        `<svg viewBox="0 0 220 110">${leaf(78, 96, -35, 0.9)}${leaf(142, 96, 35, 0.9)}${head(56, 64, 26, "sakura")}${head(110, 50, 36, "rose")}${head(164, 64, 26, "daisy")}</svg>`;
+
+      /* ---------- Meter (satu momen pas halaman dibuka) ---------- */
+      (function meter() {
+        const fill = $("#fill"),
+          pct = $("#pct"),
+          track = $("#track"),
+          note = $("#mnote");
+        const dur = reduce ? 0 : 2600,
+          t0 = performance.now();
+        function step(t) {
+          const k = dur ? Math.min(1, (t - t0) / dur) : 1,
+            e = 1 - Math.pow(1 - k, 3);
+          fill.style.width = e * 100 + "%";
+          pct.textContent = Math.round(e * 100) + "%";
+          if (k < 1) requestAnimationFrame(step);
+          else {
+            pct.textContent = "100%+";
+            track.classList.add("full");
+            note.classList.add("on");
+          }
+        }
+        requestAnimationFrame(step);
+      })();
+
+      /* ---------- Kalkulator peluang ---------- */
+      (function calc() {
+        const rows = $("#rows"),
+          total = $("#total"),
+          btn = $("#calc");
+        let shown = 0,
+          state = "idle",
+          timers = [];
+        function build() {
+          rows.innerHTML = D()
+            .calc.map(
+              (r) =>
+                `<div class="row"><div class="row-head"><span>${r[0]}</span><b>${r[1]}</b></div><div class="bar" style="width:${r[2]}%"></div></div>`,
+            )
+            .join("");
+        }
+        function sync() {
+          [...rows.children].forEach((e, i) =>
+            e.classList.toggle("show", i < shown),
+          );
+          total.classList.toggle("show", state === "done");
+          btn.disabled = state === "busy";
+          btn.textContent =
+            D()[
+              state === "idle"
+                ? "calc_btn"
+                : state === "busy"
+                  ? "calc_busy"
+                  : "calc_again"
+            ];
+        }
+        btn.addEventListener("click", () => {
+          timers.forEach(clearTimeout);
+          timers = [];
+          shown = 0;
+          state = "busy";
+          sync();
+          const gap = reduce ? 0 : 650,
+            n = D().calc.length;
+          for (let i = 0; i < n; i++)
+            timers.push(
+              setTimeout(
+                () => {
+                  shown = i + 1;
+                  sync();
+                },
+                gap * (i + 1),
+              ),
+            );
+          timers.push(
+            setTimeout(
+              () => {
+                state = "done";
+                sync();
+              },
+              gap * (n + 1) + 200,
+            ),
+          );
+        });
+        renderers.push(() => {
+          build();
+          sync();
+        });
+      })();
+
+      /* ---------- Album ---------- */
+      (function album() {
+        const wrap = $("#album"),
+          page = $("#page"),
+          thumbs = $("#thumbs"),
+          pos = $("#pos"),
+          prev = $("#prev"),
+          next = $("#next"),
+          inner = $("#inner");
+        const GR = [
+          ["#FFC2DA", "#FF86B6"],
+          ["#E3D5FF", "#BFA3FF"],
+          ["#FFF1A8", "#FFCF7A"],
+          ["#FFD0E2", "#F7A1C4"],
+          ["#D5EBFF", "#A8CCFF"],
+          ["#FFE3CF", "#FFB98F"],
+          ["#F3D1FF", "#D69BFF"],
+        ];
+        const heart = `<svg viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`;
+        const N = PHOTOS.length;
+        let cur = 0,
+          busy = false;
+
+        thumbs.innerHTML = PHOTOS.map(
+          (src, i) =>
+            `<button class="thumb" type="button" data-i="${i}" style="--g1:${GR[i % 7][0]};--g2:${GR[i % 7][1]}">${src ? `<img src="${src}" alt="">` : ""}</button>`,
+        ).join("");
+        thumbs.addEventListener("click", (e) => {
+          const t = e.target.closest(".thumb");
+          if (t) go(+t.dataset.i);
+        });
+
+        function paint() {
+          const d = D(),
+            b = d.bukti[cur],
+            g = GR[cur % 7],
+            src = PHOTOS[cur];
+          page.innerHTML = `
+      <span class="evid">${d.exh} #${cur + 1}</span>
+      <figure class="polaroid" style="--tilt:${cur % 2 ? 1.6 : -1.6}deg;margin-bottom:6px">
+        <div class="photo">${src ? `<img src="${src}" alt="${b[0]}">` : `<div class="ph" style="--g1:${g[0]};--g2:${g[1]}">${heart}<span>${d.ph.replace("%n", cur + 1)}</span></div>`}</div>
+        <figcaption class="cap">${b[0]}</figcaption>
+      </figure>
+      <h3>${b[1]}</h3>
+      <p>${b[2]}</p>`;
+          pos.textContent = `${cur + 1} ${d.of} ${N}`;
+          prev.disabled = cur === 0;
+          next.disabled = cur === N - 1;
+          thumbs.querySelectorAll(".thumb").forEach((t, i) => {
+            t.setAttribute("aria-current", i === cur ? "true" : "false");
+            t.setAttribute("aria-label", `${d.exh} ${i + 1}`);
+          });
+        }
+        function go(n) {
+          if (busy || n < 0 || n >= N || n === cur) return;
+          const dir = n > cur ? 1 : -1,
+            dur = reduce ? 0 : 230;
+          busy = true;
+          page.animate(
+            [
+              { transform: "perspective(1100px) rotateY(0deg)", opacity: 1 },
+              {
+                transform: `perspective(1100px) rotateY(${-65 * dir}deg)`,
+                opacity: 0,
+              },
+            ],
+            { duration: dur, easing: "ease-in" },
+          ).onfinish = () => {
+            cur = n;
+            paint();
+            page.animate(
+              [
+                {
+                  transform: `perspective(1100px) rotateY(${65 * dir}deg)`,
+                  opacity: 0,
+                },
+                { transform: "perspective(1100px) rotateY(0deg)", opacity: 1 },
+              ],
+              { duration: dur, easing: "ease-out" },
+            ).onfinish = () => {
+              busy = false;
+            };
+          };
+        }
+        prev.addEventListener("click", () => go(cur - 1));
+        next.addEventListener("click", () => go(cur + 1));
+        inner.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight") go(cur + 1);
+          if (e.key === "ArrowLeft") go(cur - 1);
+        });
+        let sx = null;
+        inner.addEventListener(
+          "touchstart",
+          (e) => {
+            sx = e.touches[0].clientX;
+          },
+          { passive: true },
+        );
+        inner.addEventListener("touchend", (e) => {
+          if (sx === null) return;
+          const dx = e.changedTouches[0].clientX - sx;
+          sx = null;
+          if (Math.abs(dx) > 55) go(cur + (dx < 0 ? 1 : -1));
+        });
+        $("#openAlbum").addEventListener("click", () => {
+          const music = document.getElementById("bgMusic");
+          if (music) {
+            music.play().catch(() => {});
+          }
+          wrap.classList.add("open");
+          setTimeout(
+            () => inner.focus({ preventScroll: true }),
+            reduce ? 0 : 900,
+          );
+        });
+        renderers.push(paint);
+      })();
+
+      /* ---------- Saksi ---------- */
+      renderers.push(() => {
+        $("#notes").innerHTML = D()
+          .saksi.map(
+            (s) =>
+              `<div class="note"><p class="who">${s[0]}</p><blockquote>${s[1]}</blockquote></div>`,
+          )
+          .join("");
+      });
+
+      /* ---------- Peta Jakarta - Solo ---------- */
+      (function map() {
+        const S = 68,
+          LON0 = 104.9,
+          LAT0 = -4.6;
+        const P = (lon, lat) => [(lon - LON0) * S, (LAT0 - lat) * S];
+        const f = (n) => n.toFixed(1);
+        function smooth(ll) {
+          const pts = ll.map((p) => P(p[0], p[1])),
+            n = pts.length;
+          let d = `M${f(pts[0][0])},${f(pts[0][1])}`;
+          for (let i = 0; i < n; i++) {
+            const p0 = pts[(i - 1 + n) % n],
+              p1 = pts[i],
+              p2 = pts[(i + 1) % n],
+              p3 = pts[(i + 2) % n];
+            d += ` C${f(p1[0] + (p2[0] - p0[0]) / 6)},${f(p1[1] + (p2[1] - p0[1]) / 6)} ${f(p2[0] - (p3[0] - p1[0]) / 6)},${f(p2[1] - (p3[1] - p1[1]) / 6)} ${f(p2[0])},${f(p2[1])}`;
+          }
+          return d + "Z";
+        }
+        const JAVA = [
+          [105.98, -5.92],
+          [106.4, -6.0],
+          [106.85, -6.05],
+          [107.4, -5.93],
+          [107.85, -6.22],
+          [108.3, -6.3],
+          [108.55, -6.75],
+          [109.1, -6.87],
+          [109.7, -6.88],
+          [110.4, -6.95],
+          [110.65, -6.75],
+          [110.92, -6.45],
+          [111.4, -6.62],
+          [111.95, -6.85],
+          [112.5, -6.9],
+          [112.75, -7.2],
+          [112.95, -7.65],
+          [113.55, -7.68],
+          [114.05, -7.72],
+          [114.4, -8.15],
+          [114.45, -8.6],
+          [114.3, -8.72],
+          [113.9, -8.6],
+          [113.4, -8.4],
+          [112.9, -8.3],
+          [112.4, -8.3],
+          [111.9, -8.3],
+          [111.3, -8.25],
+          [110.7, -8.18],
+          [110.2, -8.0],
+          [109.7, -7.78],
+          [109.1, -7.72],
+          [108.5, -7.78],
+          [107.9, -7.6],
+          [107.4, -7.4],
+          [106.9, -7.35],
+          [106.55, -7.05],
+          [106.25, -6.95],
+          [105.6, -6.95],
+          [105.3, -6.78],
+          [105.55, -6.6],
+          [105.8, -6.42],
+          [105.9, -6.15],
+        ];
+        const MADURA = [
+          [112.72, -7.05],
+          [113.3, -6.9],
+          [114.05, -7.05],
+          [113.9, -7.2],
+          [113.3, -7.15],
+          [112.8, -7.15],
+        ];
+        const SUMATRA = [
+          [103.4, -3.2],
+          [105.8, -3.3],
+          [105.9, -4.7],
+          [105.75, -5.85],
+          [105.35, -5.85],
+          [104.7, -5.9],
+          [104.0, -5.4],
+          [103.5, -4.6],
+        ];
+
+        const JK = { lon: 106.8456, lat: -6.2088 },
+          SO = { lon: 110.8283, lat: -7.5666 };
+        const a = P(JK.lon, JK.lat),
+          b = P(SO.lon, SO.lat);
+        const mid = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2],
+          ctrl = [mid[0], mid[1] - 90];
+        const half = [
+          0.25 * a[0] + 0.5 * ctrl[0] + 0.25 * b[0],
+          0.25 * a[1] + 0.5 * ctrl[1] + 0.25 * b[1],
+        ];
+        const rad = (x) => (x * Math.PI) / 180;
+        const hav = (p, q) => {
+          const R = 6371,
+            dLat = rad(q.lat - p.lat),
+            dLon = rad(q.lon - p.lon);
+          const h =
+            Math.sin(dLat / 2) ** 2 +
+            Math.cos(rad(p.lat)) *
+              Math.cos(rad(q.lat)) *
+              Math.sin(dLon / 2) ** 2;
+          return 2 * R * Math.asin(Math.sqrt(h));
+        };
+        const km = Math.round(hav(JK, SO) / 5) * 5;
+        const bd = P(107.61, -6.91),
+          sb = P(112.75, -7.25);
+
+        const svg = `<svg viewBox="0 0 680 313" aria-hidden="true">
+    <path class="land" d="${smooth(SUMATRA)}"/>
+    <path class="land" d="${smooth(JAVA)}"/>
+    <path class="land" d="${smooth(MADURA)}"/>
+    <text class="mt sea" x="330" y="52" text-anchor="middle" data-t="sea_n"></text>
+    <text class="mt sea" x="330" y="296" text-anchor="middle" data-t="sea_s"></text>
+    <circle cx="${f(bd[0])}" cy="${f(bd[1])}" r="5" fill="var(--ink-soft)"/><text class="mt small" x="${f(bd[0] + 11)}" y="${f(bd[1] + 18)}">Bandung</text>
+    <circle cx="${f(sb[0])}" cy="${f(sb[1])}" r="5" fill="var(--ink-soft)"/><text class="mt small" x="${f(sb[0] + 11)}" y="${f(sb[1] + 24)}">Surabaya</text>
+    <path id="route" class="route" d="M${f(a[0])},${f(a[1])} Q${f(ctrl[0])},${f(ctrl[1])} ${f(b[0])},${f(b[1])}"/>
+    <g transform="translate(${f(a[0])} ${f(a[1])})"><circle class="pulse" r="10"/><circle class="pin" r="9"/><circle r="3.5" fill="#fff"/></g>
+    <g transform="translate(${f(b[0])} ${f(b[1])})"><circle class="pulse b" r="10"/><circle class="pin" r="9"/><circle r="3.5" fill="#fff"/></g>
+    <text class="mt city" x="${f(a[0] - 16)}" y="${f(a[1] + 6)}" text-anchor="end">Jakarta</text>
+    <text class="mt role" x="${f(a[0] - 16)}" y="${f(a[1] + 30)}" text-anchor="end" data-t="map_me"></text>
+    <text class="mt city" x="${f(b[0] + 18)}" y="${f(b[1] + 2)}">Solo</text>
+    <text class="mt role" x="${f(b[0] + 18)}" y="${f(b[1] + 26)}" data-t="map_you"></text>
+    <g><rect class="pill" x="${f(half[0] - 74)}" y="${f(half[1] - 58)}" width="148" height="40" rx="20"/><text class="pilltxt" id="kmtxt" x="${f(half[0])}" y="${f(half[1] - 31)}" text-anchor="middle">~${km} km</text></g>
+    <g id="plane"><g transform="scale(1.4)"><path class="plane" d="M15,0 L6,-2.5 L0,-13 L-4,-13 L-3,-2.5 L-10,-2.2 L-13,-6 L-15.5,-6 L-14,0 L-15.5,6 L-13,6 L-10,2.2 L-3,2.5 L-4,13 L0,13 L6,2.5 Z"/></g></g>
+    <path d="M636,22 L645,50 L636,44 L627,50 Z" fill="var(--rose-deep)"/><text class="mt tiny" x="636" y="72" text-anchor="middle">N</text>
+    <line x1="24" y1="284" x2="85" y2="284" stroke="var(--ink-soft)" stroke-width="3" stroke-linecap="round"/><text class="mt tiny" x="24" y="272">100 km</text>
+  </svg>`;
+        $("#map").innerHTML = svg;
+
+        const route = $("#route"),
+          plane = $("#plane"),
+          L = route.getTotalLength();
+        const ease = (t) =>
+          t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        function place(k, dir) {
+          const p = route.getPointAtLength(L * k),
+            p1 = route.getPointAtLength(L * Math.max(0, k - 0.004)),
+            p2 = route.getPointAtLength(L * Math.min(1, k + 0.004));
+          let ang = (Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180) / Math.PI;
+          if (dir < 0) ang += 180;
+          plane.setAttribute(
+            "transform",
+            `translate(${f(p.x)} ${f(p.y)}) rotate(${f(ang)})`,
+          );
+        }
+        if (reduce) {
+          place(0.5, 1);
+        } else {
+          const fly = 5200,
+            hold = 1100,
+            per = 2 * (fly + hold);
+          let t0 = null;
+          (function loop(ts) {
+            if (t0 === null) t0 = ts;
+            const p = (ts - t0) % per;
+            let k, dir;
+            if (p < fly) {
+              k = ease(p / fly);
+              dir = 1;
+            } else if (p < fly + hold) {
+              k = 1;
+              dir = 1;
+            } else if (p < 2 * fly + hold) {
+              k = 1 - ease((p - fly - hold) / fly);
+              dir = -1;
+            } else {
+              k = 0;
+              dir = -1;
+            }
+            place(k, dir);
+            requestAnimationFrame(loop);
+          })(performance.now());
+        }
+        renderers.push(() => {
+          $("#chip1").textContent = D().chip1.replace("%k", km);
+        });
+      })();
+
+      /* ---------- Sebelum / sesudah ---------- */
+      (function slider() {
+        const ba = $("#ba"),
+          range = $("#range");
+        const set = () => ba.style.setProperty("--p", range.value + "%");
+        range.addEventListener("input", set);
+        set();
+      })();
+
+      /* ---------- Buket bunga ---------- */
+      (function bouquet() {
+        const box = $("#bouquet"),
+          card = $("#promise");
+        const H = [
+          { x: 170, y: 72, r: 44, k: "rose" },
+          { x: 100, y: 120, r: 38, k: "daisy" },
+          { x: 240, y: 120, r: 38, k: "sakura" },
+          { x: 58, y: 190, r: 34, k: "lav" },
+          { x: 282, y: 190, r: 34, k: "sun" },
+        ];
+        let s = `<svg viewBox="0 0 340 312">`;
+        H.forEach((h) => {
+          s += `<path d="M170 252 Q${(170 + h.x) / 2} ${(252 + h.y) / 2 + 34} ${h.x} ${h.y + h.r * 0.5}" stroke="#5FB884" stroke-width="5" fill="none" stroke-linecap="round"/>`;
+        });
+        s +=
+          leaf(126, 196, -42, 1) +
+          leaf(214, 196, 42, 1) +
+          leaf(96, 228, -62, 0.9) +
+          leaf(244, 228, 62, 0.9);
+        s += `<path d="M90 228 L250 228 L198 306 L142 306 Z" fill="#FFD0E2" stroke="#F06FA0" stroke-width="2.5" stroke-linejoin="round"/><path d="M90 228 L170 262 L142 306 Z" fill="#FFB3D0" opacity=".85"/><path d="M250 228 L170 262 L198 306 Z" fill="#FFC2DA" opacity=".85"/>`;
+        s += `<ellipse cx="146" cy="236" rx="22" ry="12" fill="#E5478A" transform="rotate(-16 146 236)"/><ellipse cx="194" cy="236" rx="22" ry="12" fill="#E5478A" transform="rotate(16 194 236)"/><circle cx="170" cy="238" r="9" fill="#C92A6D"/>`;
+        H.forEach((h, i) => {
+          s += `<g class="flw" data-i="${i}" role="button" tabindex="0" style="--d:${i}">
+      <circle class="ring" cx="${h.x}" cy="${h.y}" r="${h.r + 12}"/>
+      <g class="bloom" style="transform-origin:${h.x}px ${h.y}px">${head(h.x, h.y, h.r, h.k)}</g>
+      <circle cx="${h.x}" cy="${h.y}" r="${h.r + 8}" fill="transparent"/>
+    </g>`;
+        });
+        s += `</svg>`;
+        box.innerHTML = s;
+        let sel = -1;
+        function pick(i) {
+          sel = i;
+          box
+            .querySelectorAll(".flw")
+            .forEach((g, j) => g.classList.toggle("sel", j === i));
+          card.textContent = D().promises[i];
+          card.classList.remove("flip");
+          void card.offsetWidth;
+          card.classList.add("flip");
+        }
+        box.addEventListener("click", (e) => {
+          const g = e.target.closest(".flw");
+          if (g) pick(+g.dataset.i);
+        });
+        box.addEventListener("keydown", (e) => {
+          if (e.key !== "Enter" && e.key !== " ") return;
+          const g = e.target.closest(".flw");
+          if (g) {
+            e.preventDefault();
+            pick(+g.dataset.i);
+          }
+        });
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (en) => {
+              if (en[0].isIntersecting) {
+                box.classList.add("in");
+                io.disconnect();
+              }
+            },
+            { threshold: 0.35 },
+          );
+          io.observe(box);
+        } else box.classList.add("in");
+        renderers.push(() => {
+          box
+            .querySelectorAll(".flw")
+            .forEach((g, i) =>
+              g.setAttribute("aria-label", `${D().flower} ${i + 1}`),
+            );
+          card.textContent = sel < 0 ? D().pdef : D().promises[sel];
+        });
+      })();
+
+      /* ---------- Putusan ---------- */
+      (function verdict() {
+        const btn = $("#gavel"),
+          cert = $("#cert");
+        function burst() {
+          if (reduce) return;
+          const r = btn.getBoundingClientRect(),
+            x = r.left + r.width / 2,
+            y = r.top + r.height / 2,
+            icons = ["💗", "💖", "🌸", "🌷", "✨", "🎀"];
+          for (let i = 0; i < 22; i++) {
+            const s = document.createElement("span");
+            s.className = "fx";
+            s.textContent = icons[i % icons.length];
+            s.style.left = x + "px";
+            s.style.top = y + "px";
+            document.body.appendChild(s);
+            const dx = (Math.random() - 0.5) * 300,
+              dy = -(90 + Math.random() * 240),
+              rot = (Math.random() - 0.5) * 160;
+            s.animate(
+              [
+                { transform: "translate(-50%,-50%) scale(.6)", opacity: 1 },
+                {
+                  transform: `translate(calc(-50% + ${dx}px),calc(-50% + ${dy}px)) scale(1.3) rotate(${rot}deg)`,
+                  opacity: 0,
+                },
+              ],
+              {
+                duration: 1100 + Math.random() * 800,
+                easing: "cubic-bezier(.2,.7,.3,1)",
+              },
+            ).onfinish = () => s.remove();
+          }
+        }
+        btn.addEventListener("click", () => {
+          burst();
+          if (!cert.classList.contains("on")) {
+            cert.classList.add("on");
+            setTimeout(
+              () =>
+                cert.scrollIntoView({
+                  behavior: reduce ? "auto" : "smooth",
+                  block: "center",
+                }),
+              120,
+            );
+          }
+        });
+      })();
+
+      /* ---------- Bahasa ---------- */
+      function applyLang() {
+        const d = D();
+        document.documentElement.lang = lang;
+        document.title = d.title;
+        document.querySelectorAll("[data-t]").forEach((el) => {
+          el.textContent = d[el.dataset.t];
+        });
+        document.querySelectorAll("[data-th]").forEach((el) => {
+          el.innerHTML = d[el.dataset.th];
+        });
+        document.querySelectorAll("[data-al]").forEach((el) => {
+          el.setAttribute("aria-label", d[el.dataset.al]);
+        });
+        document
+          .querySelectorAll(".lang button")
+          .forEach((b) =>
+            b.setAttribute(
+              "aria-pressed",
+              b.dataset.lang === lang ? "true" : "false",
+            ),
+          );
+        renderers.forEach((r) => r());
+      }
+      document.querySelectorAll(".lang button").forEach((b) =>
+        b.addEventListener("click", () => {
+          lang = b.dataset.lang;
+          try {
+            localStorage.setItem("bp-lang", lang);
+          } catch (e) {}
+          applyLang();
+        }),
+      );
+      applyLang();
+    </script>
+  </body>
+</html>
